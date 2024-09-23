@@ -1,3 +1,11 @@
+document.getElementById('blogbtn').addEventListener('click',function(){
+  window.location.href = 'faq.html'
+})
+// document.getElementById('homebtn').addEventListener('click',function(){
+//   window.location.href = 'index.html'
+// })
+
+
 function getInputFieldID(id){
     const inputItem = parseFloat(document.getElementById(id).value);
     return inputItem;
@@ -7,6 +15,7 @@ function getInputTextField(id){
     const anyInnerTextParseFloat = parseFloat(anyInnerText)
     return anyInnerTextParseFloat
 }
+
 let addMoneyArrayFrist =[]
 let addMoneyArraySecond = []
 let addMoneyArrayThird = []
@@ -19,13 +28,17 @@ function allAroundDonationFunction(inputID, availableMoneyID, addMoneyID,history
 
   addMoneyArray.push(inputValue);
   if(isNaN(inputValue)||inputValue<=0){
-    return alert("Invalied Donate Amount")
+     alert("Invalied Donate Amount")
+     document.getElementById('my_modal_5').classList.add('hidden')
+     return
   } 
   let total = 0
       for(eachmoneyDonation of addMoneyArray){
           total+=eachmoneyDonation
           console.log(total);
         ;
+
+        
       
        
       }
@@ -34,11 +47,25 @@ function allAroundDonationFunction(inputID, availableMoneyID, addMoneyID,history
 
   const availAbleMoney = getInputTextField(availableMoneyID); 
   const updateMoney = availAbleMoney - total; 
-  
-
   console.log("Updated Available Money:", updateMoney);
-  document.getElementById(addMoneyID).innerText = total.toFixed(2);  
+  if(total>availAbleMoney||updateMoney<=0){
+    alert("no added in balance")
+    document.getElementById('my_modal_5').classList.add('hidden')
+    window.location.reload();
+    
+    
+  
+   
+  }
+ 
+
+
+  document.getElementById(addMoneyID).innerText = total.toFixed(2); 
   document.getElementById(availableMoneyID).innerText = updateMoney.toFixed(2); 
+   
+ 
+   
+  document.getElementById(inputID).value = ""
   document.getElementById('history-list').classList.add('hidden')
 
 // comment section
