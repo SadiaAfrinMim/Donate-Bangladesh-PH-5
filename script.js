@@ -52,7 +52,7 @@ function allAroundDonationFunction(
   if (total > availAbleMoney || updateMoney <= 0) {
     alert("no added in balance");
     document.getElementById("my_modal_5").classList.add("hidden");
-    window.location.reload();
+    return
   }
 
   document.getElementById(addMoneyID).innerText = total.toFixed(2);
