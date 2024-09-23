@@ -2,10 +2,10 @@ document.getElementById("blogbtn").addEventListener("click", function () {
   window.location.href = "faq.html";
   
 });
-document.getElementById("homebtn").addEventListener("click",function(){
-  window.location.href = "index.html";
 
-})
+
+
+
 
 function getInputFieldID(id) {
   const inputItem = parseFloat(document.getElementById(id).value);
