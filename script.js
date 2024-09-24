@@ -15,6 +15,7 @@ function getInputTextField(id) {
 let addMoneyArrayFrist = [];
 let addMoneyArraySecond = [];
 let addMoneyArrayThird = [];
+// main function 
 
 function allAroundDonationFunction(
   inputID,
@@ -77,7 +78,7 @@ function allAroundDonationFunction(
     document.getElementById("my_modal_5").showModal();
   }
 }
-
+// calling this function
 document
   .getElementById("donateBtn")
   .addEventListener("click", function (event) {
