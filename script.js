@@ -22,14 +22,15 @@ function allAroundDonationFunction(
   addMoneyID,
   historyCommentID,
   event,
-  addMoneyArray
+  addMoneyArray,
+  
 ) {
   event.preventDefault();
 
   const inputValue = getInputFieldID(inputID);
   console.log("Input Value Type:", typeof inputValue);
 
-  // Validation for input field: only alerts, no modals
+  // Validation for input field
   if (inputValue === "" || inputValue <= 0 || isNaN(inputValue)) {
     alert("Invalid number. Please enter a valid positive number.");
     return;
@@ -47,8 +48,8 @@ function allAroundDonationFunction(
   const updateMoney = availAbleMoney - total;
   console.log("Updated Available Money:", updateMoney);
 
-  // Validation for available money: only alerts, no modals
-  if (total > availAbleMoney || updateMoney <= 0) {
+  // Validation for available
+  if (total > availAbleMoney || updateMoney === 0) {
     alert("No balance available to add.");
     return;
   } else {
@@ -70,7 +71,10 @@ function allAroundDonationFunction(
             <p>Date : ${date}</p>`;
 
     document.getElementById("history-list").appendChild(hisoryitem);
+    document.getElementById('my_modal_5').showModal()
+    
   }
+  
 }
 
 document.getElementById("donateBtn").addEventListener("click", function (event) {
@@ -81,6 +85,7 @@ document.getElementById("donateBtn").addEventListener("click", function (event) 
     "fristtext",
     event,
     addMoneyArrayFrist
+   
   );
 });
 
@@ -93,7 +98,8 @@ document
       "addMoneySecond",
       "secondtext",
       event,
-      addMoneyArraySecond
+      ddMoneyArraySecond
+      
     );
   });
 
