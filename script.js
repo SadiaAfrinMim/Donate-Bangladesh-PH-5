@@ -31,21 +31,21 @@ function allAroundDonationFunction(
   console.log("Input Value Type:", typeof inputValue);
   const availAbleMoney = getInputTextField(availableMoneyID);
   const historyComment = getInputTextField(historyCommentID);
+  const addMoneyid = getInputTextField(addMoneyID)
+  
 
 
   // Validation for input field
-  if (inputValue === "" || inputValue <= 0 || isNaN(inputValue||inputValue>availAbleMoney)) {
+  if (inputValue === "" || inputValue <= 0 || isNaN(inputValue)||inputValue>availAbleMoney) {
     alert("Invalid number. Please enter a valid positive number.");
     return;
   }
 
   addMoneyArray.push(inputValue);
 
-  let total = 0;
-  for (eachmoneyDonation of addMoneyArray) {
-    total += eachmoneyDonation;
-    console.log(total);
-  }
+ const total = inputValue + addMoneyid 
+ console.log('total money',total);
+ 
 
   
   const updateMoney = availAbleMoney - total;
@@ -100,7 +100,7 @@ document
       "addMoneySecond",
       "secondtext",
       event,
-      ddMoneyArraySecond
+      addMoneyArraySecond
       
     );
   });
