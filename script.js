@@ -40,6 +40,7 @@ function allAroundDonationFunction(
     inputValue > availAbleMoney
   ) {
     alert("Invalid number. Please enter a valid positive number.");
+    document.getElementById(inputID).value = " "
     return;
   }
 
