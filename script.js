@@ -29,9 +29,12 @@ function allAroundDonationFunction(
 
   const inputValue = getInputFieldID(inputID);
   console.log("Input Value Type:", typeof inputValue);
+  const availAbleMoney = getInputTextField(availableMoneyID);
+  const historyComment = getInputTextField(historyCommentID);
+
 
   // Validation for input field
-  if (inputValue === "" || inputValue <= 0 || isNaN(inputValue)) {
+  if (inputValue === "" || inputValue <= 0 || isNaN(inputValue||inputValue>availAbleMoney)) {
     alert("Invalid number. Please enter a valid positive number.");
     return;
   }
@@ -44,14 +47,14 @@ function allAroundDonationFunction(
     console.log(total);
   }
 
-  const availAbleMoney = getInputTextField(availableMoneyID);
+  
   const updateMoney = availAbleMoney - total;
   console.log("Updated Available Money:", updateMoney);
 
   // Validation for available
-  if (total > availAbleMoney || updateMoney === 0) {
+  if (total > availAbleMoney||updateMoney > availAbleMoney) {
     alert("No balance available to add.");
-    return;
+    
   } else {
     document.getElementById(addMoneyID).innerText = total.toFixed(2);
     document.getElementById(availableMoneyID).innerText = updateMoney.toFixed(2);
@@ -60,8 +63,7 @@ function allAroundDonationFunction(
     document.getElementById("history-list").classList.add("hidden");
 
     // comment section
-    const historyComment = document.getElementById(historyCommentID).innerText;
-
+   
     const date = new Date();
     const hisoryitem = document.createElement("div");
     hisoryitem.className = "shadow-lg p-4 space-y-4 rounded-md";
