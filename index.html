@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
       rel="stylesheet"
       type="text/css"
     />
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .lexend-font {
@@ -38,9 +38,9 @@
   </head>
 
   <body class="lexend-font">
-    <header class="lg:w-11/12  lg:mx-auto w-full lg:sticky top-0">
+    <header class="lg:w-11/12 lg:mx-auto w-full sticky top-0">
       <!-- nav bar start -->
-      <nav class="bg-[#F9F7F3] pb-6">
+      <nav class="bg-[#F9F7F3] lg:pb-6 pb-4">
         <div class="navbar bg-[#F9F7F3]">
           <div class="navbar-start">
             <button id="blogbtn" class="btn text-xl bg-[#B4F461]">Blog</button>
@@ -59,7 +59,7 @@
       </nav>
       <!-- nav bar end -->
       <!-- button start -->
-      <section class="flex bg-[#ffffff8a] justify-center gap-4 py-10">
+      <section class="flex bg-[#ffffff8a] justify-center gap-4 lg:py-10 py-6">
         <button
           id="topdonationbtn"
           class="btn border-none bg-[#B4F461] text-[#111111]"
@@ -144,11 +144,10 @@
               <p class="leading-5 text-xs text-[#111111B3]">
                 Donating for flood relief in Feni is a meaningful way to help
                 those in need during difficult times. By choosing reputable
-                organizations and spreading awareness, you can make a
-                significant impact on the lives of flood-affected individuals
-                and families.Every contribution, big or small, makes difference.
-                Please join us in supporting the relief efforts and making a
-                positive impact on the lives of those in need.
+                organizations and spreading awareness and families.Every
+                contribution, big or small, makes difference. Please join us in
+                supporting the relief efforts and making a positive impact on
+                the lives of those in need.
               </p>
               <input
                 id="inputvalueSecond"
@@ -182,9 +181,9 @@
             </div>
             <div class="flex-col items-center justify-center space-y-4">
               <button class="btn inline-flex gap-1 text-[#111111B3]">
-                <img src="assets/coin.png" alt="" /><span
-                  id="addMoneythird"
-                >0</span>
+                <img src="assets/coin.png" alt="" /><span id="addMoneythird"
+                  >0</span
+                >
                 BDT
               </button>
               <h2 id="thirdtext" class="font-bold text-xl">
@@ -218,7 +217,7 @@
       </div>
       <section>
         <!-- Open the modal using ID.showModal() method -->
-       
+
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
           <div class="modal-box space-y-4">
             <h3 class="text-4xl text-center font-extrabold">congrates!</h3>
@@ -245,8 +244,7 @@
         <div id="history-list" class="space-y-4"></div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="py-4 bg-[#F9F7F3] pb-6 mt-4"></footer>
     <script src="script.js"></script>
-    
   </body>
 </html>
